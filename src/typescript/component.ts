@@ -71,6 +71,32 @@ export type Component = {
   section_with_html_code?: ObjectProps;
   our_team?: TeamProps;
   widget?: Widget;
+  shopify_collections:ShopifyCollections
+}
+export type ShopifyCollections = {
+    collections: {
+        type:string,
+        data:[{
+            "__typename":string
+            "id":string
+            "handle":string
+            "description":string
+            "descriptionHtml":string
+            "updatedAt":string
+            "title":string
+            image:{
+                "id":string
+                "src":string
+                "altText":string
+            }
+            type:{
+                "name":string
+                "kind":string
+            }
+        }]
+    },
+    display_collection_image:boolean,
+    $: Object;
 }
 
 export type SectionWithBucket = {
@@ -84,7 +110,7 @@ export type SectionWithBucket = {
 export type Cards = {
     cards: Card;
   }
-  
+
 export type Banner = {
     banner_title:string;
     banner_description: string;
@@ -94,7 +120,7 @@ export type Banner = {
     text_color: string;
     $: Object;
   }
-  
+
 export type ObjectProps = {
     html_code_alignment: string;
     title: string;
@@ -102,7 +128,7 @@ export type ObjectProps = {
     description: string;
     html_code: string;
   }
-  
+
 export type SectionProps = {
     title_h2: String;
     description: string;
@@ -110,15 +136,15 @@ export type SectionProps = {
     image: Image;
     image_alignment: string;
     $: Object;
-  } 
-  
+  }
+
 export type TeamProps = {
     title_h2: string;
     description: string;
     $: Object;
     employees: [Employee];
   }
-  
+
 export type FeaturedBlogData = {
     title_h2: string;
     view_articles: Article;

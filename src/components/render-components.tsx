@@ -9,14 +9,16 @@ import BlogSection from "./blog-section";
 import SectionBucket from "./section-bucket";
 import AboutSectionBucket from "./about-section-bucket";
 import SectionWithHtmlCode from "./section-with-html-code";
+import ShopifyCollections from "./shopify-collections";
 import { RenderProps } from "../typescript/component";
 
 export default function RenderComponents(props: RenderProps) {
-    
+
   const { pageComponents, blogsPage, contentTypeUid, entryUid, locale } =
     props;
   return (
     <div data-pageref={entryUid} data-contenttype={contentTypeUid} data-locale={locale}>
+      {/* eslint-disable-next-line array-callback-return */}
       {pageComponents?.map((component, key: number) => {
         if (component.hero_banner) {
           return blogsPage ? (
@@ -77,6 +79,15 @@ export default function RenderComponents(props: RenderProps) {
               key={`component-${key}`}
             />
           );
+        }
+        if (component.shopify_collections){
+          return (
+              <ShopifyCollections
+                  collections={component.shopify_collections.collections}
+                  display_collection_image={component.shopify_collections.display_collection_image}
+                  key={`component-${key}`}
+              />
+          )
         }
       })}
     </div>
