@@ -19,7 +19,7 @@ export default function AboutSectionBucket({ sectionWithBuckets }: {sectionWithB
   }
 
   return (
-    <div className='member-main-section'>
+    <div className='max-width member-main-section'>
       <div className='member-head'>{sectionWithBuckets.title_h2 && <h2 {...sectionWithBuckets.$?.title_h2 as {}}>{sectionWithBuckets.title_h2}</h2>}</div>
       <div className='mission-section'>
         <div className='mission-content-top'>{sectionWithBuckets.buckets.map((bucket, index: number) => index < 3 && bucketContent(bucket, index))}</div>

@@ -6,7 +6,7 @@ import { BucketProps } from "../typescript/section";
 export default function SectionBucket({ section }: {section: BucketProps}) {
 
   return (
-    <div className='member-main-section'>
+    <div className='max-width  member-main-section'>
       <div className='member-head'>
         {section.title_h2 && <h2 {...section.$?.title_h2 as {}}>{section.title_h2}</h2>}
         {section.description && <p {...section.$?.description as {}}>{section.description}</p>}

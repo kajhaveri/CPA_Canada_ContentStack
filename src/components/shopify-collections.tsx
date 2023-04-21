@@ -28,7 +28,7 @@ type ShopifyCollectionsProps = {
 export default function ShopifyCollections({ collections, display_collection_image }: ShopifyCollectionsProps) {
 
   return (
-    <div className='community-section'>
+    <div className='max-width community-section'>
     <div className='home-featured-blogs'>
       {collections?.data.map((collection) => (
           <div className='featured-blog' key={collection.id}>

@@ -7,7 +7,7 @@ export default function BlogSection(props: FeaturedBlogProps) {
 
   const fromBlog = props.blogs;
   return (
-    <div className='community-section'>
+    <div className='max-width community-section'>
       <div className='community-head'>
         {fromBlog.title_h2 && <h2 {...fromBlog.$?.title_h2 as {}}>{fromBlog.title_h2}</h2>}
         {fromBlog.view_articles.title && (
